@@ -1,0 +1,90 @@
+{
+  "projectType": "application",
+  "sourceRoot": "apps/mtp-test/src",
+  "prefix": "mtp-test",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/mtp-test",
+        "index": "apps/mtp-test/src/index.html",
+        "main": "apps/mtp-test/src/main.ts",
+        "polyfills": "apps/mtp-test/src/polyfills.ts",
+        "tsConfig": "apps/mtp-test/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/mtp-test/src/favicon.ico", "apps/mtp-test/src/assets"],
+        "styles": ["apps/mtp-test/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/mtp-test/src/environments/environment.ts",
+              "with": "apps/mtp-test/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "mtp-test:build:production"
+        },
+        "development": {
+          "browserTarget": "mtp-test:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "options": {
+        "proxyConfig": "apps/mtp-test/proxy.conf.json"
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "mtp-test:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/mtp-test/**/*.ts", "apps/mtp-test/**/*.html"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/mtp-test"],
+      "options": {
+        "jestConfig": "apps/mtp-test/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
