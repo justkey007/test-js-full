@@ -54,6 +54,7 @@ specifiers:
   reflect-metadata: ^0.1.13
   rxjs: ~7.4.0
   swagger-ui-express: ^4.4.0
+  sweetalert2: ^11.4.18
   ts-jest: 27.1.4
   ts-node: ~10.8.0
   tslib: ^2.0.0
@@ -85,6 +86,7 @@ dependencies:
   reflect-metadata: 0.1.13
   rxjs: 7.5.5
   swagger-ui-express: 4.4.0_express@4.18.1
+  sweetalert2: 11.4.18
   tslib: 2.4.0
   zone.js: 0.11.6
 
@@ -10877,6 +10879,10 @@ packages:
     dependencies:
       express: 4.18.1
       swagger-ui-dist: 4.12.0
+    dev: false
+
+  /sweetalert2/11.4.18:
+    resolution: {integrity: sha512-BZPTQI54NYdjIVe2tmsS5JVU7E623P3Sv4ce3BO8V6PdeIdGPGmQm43ojr1cnpGJ1xYhbdwsHIH+t5tICvZ6ZA==}
     dev: false
 
   /symbol-observable/4.0.0:

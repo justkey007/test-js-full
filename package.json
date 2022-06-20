@@ -7,8 +7,9 @@
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2020 browser module main",
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test api && nx test mtp-test",
-    "e2e": "nx e2e mtp-test-e2e"
+    "test:apps": "nx test api && nx test mtp-test",
+    "e2e": "nx e2e mtp-test-e2e",
+    "test": "npm run test:apps && npm run e2e"
   },
   "private": true,
   "dependencies": {
@@ -36,6 +37,7 @@
     "reflect-metadata": "^0.1.13",
     "rxjs": "~7.4.0",
     "swagger-ui-express": "^4.4.0",
+    "sweetalert2": "^11.4.18",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
   },

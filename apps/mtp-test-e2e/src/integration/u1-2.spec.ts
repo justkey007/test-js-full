@@ -9,7 +9,7 @@ describe('U1.2', () => {
     cy.get('h1').contains('Dashboard');
   });
 
-  it('Should update a order amount and detect chart changes', () => {
+  it('Should update an order amount and detect chart changes', () => {
     cy.wait(1000);
     cy.get('.apexcharts-canvas')
       .invoke('html')

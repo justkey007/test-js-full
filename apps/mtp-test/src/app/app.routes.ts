@@ -1,4 +1,5 @@
 import { Route } from '@angular/router';
+import { TimeoutResolver } from './pages/timeout/timeout.resolver';
 
 export const appRoutes: Route[] = [
   {
@@ -7,6 +8,12 @@ export const appRoutes: Route[] = [
       import('./pages/dashboard/dashboard.module').then(
         (m) => m.DashboardModule
       ),
+  },
+  {
+    path: 'timeout',
+    resolve: { data: TimeoutResolver },
+    loadChildren: () =>
+      import('./pages/timeout/timeout.module').then((m) => m.TimeoutModule),
   },
   {
     path: '**',

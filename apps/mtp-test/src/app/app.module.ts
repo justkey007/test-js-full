@@ -8,6 +8,10 @@ import { AgGridModule } from 'ag-grid-angular';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 import { ApiResponseInterceptor } from './interceptors/api-response.interceptor';
+import {
+  DEFAULT_TIMEOUT,
+  RequestTimeoutHttpInterceptor,
+} from './interceptors/timeout.interceptor';
 
 registerLocaleData(localeFr);
 
@@ -27,6 +31,12 @@ registerLocaleData(localeFr);
       useClass: ApiResponseInterceptor,
       multi: true,
     },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: RequestTimeoutHttpInterceptor,
+      multi: true,
+    },
+    { provide: DEFAULT_TIMEOUT, useValue: 5000 },
   ],
   bootstrap: [AppComponent],
 })
