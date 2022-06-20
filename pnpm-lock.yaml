@@ -16,6 +16,7 @@ specifiers:
   '@angular/platform-browser': ~13.1.0
   '@angular/platform-browser-dynamic': ~13.1.0
   '@angular/router': ~13.1.0
+  '@cervotech/types': ^0.1.1
   '@nestjs/common': ^8.0.0
   '@nestjs/core': ^8.0.0
   '@nestjs/platform-express': ^8.0.0
@@ -41,7 +42,6 @@ specifiers:
   eslint: ~8.15.0
   eslint-config-prettier: 8.1.0
   eslint-plugin-cypress: ^2.10.3
-  fs-extra: ^10.1.0
   jest: 27.5.1
   jest-preset-angular: ~11.1.2
   ng-apexcharts: ^1.7.1
@@ -64,6 +64,7 @@ dependencies:
   '@angular/platform-browser': 14.0.2_nntcdqgagbl3t3hgjbq6uefy4u
   '@angular/platform-browser-dynamic': 14.0.2_tau75ce5dlmxq7ly7n7tecfxhy
   '@angular/router': 13.1.3_rs5ap3dhmez2kt5zc3chz2uvqa
+  '@cervotech/types': 0.1.1
   '@nestjs/common': 8.4.7_47vcjb2de6lyibr6g4enoa5lyu
   '@nestjs/core': 8.4.7_fkqgj3xrohk2pflugljc4sz7ea
   '@nestjs/platform-express': 8.4.7_7tsmhnugyerf5okgqzer2mfqme
@@ -71,7 +72,6 @@ dependencies:
   ag-grid-angular: 27.3.0_pmr4nzbuf7jsxjzndvf4vm2wtu
   ag-grid-community: 27.3.0
   apexcharts: 3.35.3
-  fs-extra: 10.1.0
   ng-apexcharts: 1.7.1_7l7sfhwn22yjodyfvjar2ma6ga
   reflect-metadata: 0.1.13
   rxjs: 7.5.5
@@ -1883,6 +1883,10 @@ packages:
 
   /@bcoe/v8-coverage/0.2.3:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
+
+  /@cervotech/types/0.1.1:
+    resolution: {integrity: sha512-Ts254QgxNESkximAK8X3A/Mb/9w7INyqikWpYS5vjnH7LiVTnSqOCEwW7o0+prd8DZCWIGMqGwyMDzOKWOgjNw==}
+    dev: false
 
   /@colors/colors/1.5.0:
     resolution: {integrity: sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==}
