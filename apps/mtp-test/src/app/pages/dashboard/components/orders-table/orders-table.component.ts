@@ -6,7 +6,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { IOrder } from '@mtp-test/api-interfaces';
-import { OrdersService } from '@mtp-test/client/services/orders.service';
+import { OrdersService } from '@mtp-test/client/app/services/orders.service';
 import { AgGridAngular } from 'ag-grid-angular';
 import { ColDef, GridReadyEvent, NewValueParams } from 'ag-grid-community';
 import { Observable } from 'rxjs';
@@ -24,7 +24,12 @@ export class OrdersTableComponent implements AfterViewInit {
   public columnDefs: ColDef[] = [
     { field: 'id', editable: false, headerName: 'ID' },
 
-    { field: 'customer', headerName: 'Nom et prénoms du client' },
+    {
+      field: 'customer',
+      headerName: 'Client (Editable) !',
+      editable: true,
+      singleClickEdit: true,
+    },
     {
       field: 'orderTime',
       headerName: 'Date de la commande',
@@ -34,7 +39,7 @@ export class OrdersTableComponent implements AfterViewInit {
     },
     {
       field: 'amount',
-      headerName: 'Montant TTC',
+      headerName: 'Montant TTC (Editable) !',
       editable: true,
       cellClass: 'number-cell',
       onCellValueChanged: this.onAmountValueChanged.bind(this),

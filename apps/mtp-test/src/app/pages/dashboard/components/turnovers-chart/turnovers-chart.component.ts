@@ -6,7 +6,7 @@ import {
   LOCALE_ID,
   OnInit,
 } from '@angular/core';
-import { DashboardService } from '@mtp-test/client/services/dashboard.service';
+import { DashboardService } from '@mtp-test/client/app/services/dashboard.service';
 import { ApexOptions } from 'ng-apexcharts';
 
 @Component({

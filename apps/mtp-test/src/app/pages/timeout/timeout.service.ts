@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from 'apps/mtp-test/src/environments/environment';
+import { environment } from '@mtp-test/client/environments/environment';
 
 @Injectable({
   providedIn: 'root',

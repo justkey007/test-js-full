@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DashboardService } from '@mtp-test/client/services/dashboard.service';
+import { DashboardService } from '@mtp-test/client/app/services/dashboard.service';
 
 @Component({
   selector: 'mtp-test-dashboard',
