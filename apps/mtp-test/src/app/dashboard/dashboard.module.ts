@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { AgGridModule } from 'ag-grid-angular';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { DashboardComponent } from './dashboard.component';
 import { dashboardRoutes } from './routes';
@@ -11,6 +12,7 @@ import { dashboardRoutes } from './routes';
     CommonModule,
     RouterModule.forChild(dashboardRoutes),
     NgApexchartsModule,
+    AgGridModule,
   ],
 })
 export class DashboardModule {}

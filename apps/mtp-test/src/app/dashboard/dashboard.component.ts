@@ -1,11 +1,16 @@
 import { CurrencyPipe } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 import {
   Component,
   DEFAULT_CURRENCY_CODE,
   Inject,
   LOCALE_ID,
+  ViewChild,
 } from '@angular/core';
+import { AgGridAngular } from 'ag-grid-angular';
+import { CellClickedEvent, ColDef, GridReadyEvent } from 'ag-grid-community';
 import { ApexOptions } from 'ng-apexcharts';
+import { Observable } from 'rxjs';
 import { DashboardService } from './dashboard.service';
 
 @Component({
@@ -23,11 +28,43 @@ export class DashboardComponent {
   }
 
   constructor(
+    private http: HttpClient,
     private dashboardService: DashboardService,
     @Inject(DEFAULT_CURRENCY_CODE) private currencyCode: string,
     @Inject(LOCALE_ID) private defaultLang: string
   ) {
     this.turnoversChartOptions = this.getTurnoversChartOptions();
+  }
+
+  // Each Column Definition results in one Column.
+  public columnDefs: ColDef[] = [
+    { field: 'make' },
+    { field: 'model' },
+    { field: 'price' },
+  ];
+
+  // DefaultColDef sets props common to all Columns
+  public defaultColDef: ColDef = {
+    sortable: true,
+    filter: true,
+  };
+
+  // Data that gets displayed in the grid
+  public rowData$!: Observable<any[]>;
+
+  // For accessing the Grid's API
+  @ViewChild(AgGridAngular) agGrid!: AgGridAngular;
+
+  // Example load data from sever
+  onGridReady(params: GridReadyEvent) {
+    this.rowData$ = this.http.get<any[]>(
+      'https://www.ag-grid.com/example-assets/row-data.json'
+    );
+  }
+
+  // Example of consuming Grid Event
+  onCellClicked(e: CellClickedEvent): void {
+    console.log('cellClicked', e);
   }
 
   private getTurnoversChartOptions(): ApexOptions {
