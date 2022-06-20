@@ -6,9 +6,9 @@ import {
   ViewChild,
 } from '@angular/core';
 import { IOrder } from '@mtp-test/api-interfaces';
+import { OrdersService } from '@mtp-test/client/services/orders.service';
 import { AgGridAngular } from 'ag-grid-angular';
 import { ColDef, GridReadyEvent, NewValueParams } from 'ag-grid-community';
-import { OrdersService } from 'apps/mtp-test/src/app/services/orders.service';
 import { Observable } from 'rxjs';
 
 @Component({

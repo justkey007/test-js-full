@@ -6,6 +6,7 @@ import {
 } from '@nestjs/common';
 import { readFile, writeFile } from 'fs/promises';
 import { join } from 'path';
+import { UpdateOrderDto } from './order.dto';
 
 @Injectable()
 export class OrdersService implements OnApplicationBootstrap {
@@ -22,7 +23,7 @@ export class OrdersService implements OnApplicationBootstrap {
     return this.orders;
   }
 
-  async updateOrder(orderId: string, data: IOrder) {
+  async updateOrder(orderId: string, data: UpdateOrderDto) {
     const order = this.orders.find((_order) => _order.id === orderId);
     if (!order) {
       throw new NotFoundException();

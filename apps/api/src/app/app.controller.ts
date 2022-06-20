@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller } from '@nestjs/common';
 
 import { Message } from '@mtp-test/api-interfaces';
 
@@ -8,7 +8,6 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get('hello')
   getData(): Message {
     return this.appService.getData();
   }
